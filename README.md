@@ -1,180 +1,115 @@
-# Walmart Sales SQL Analysis
+#  Walmart Sales SQL Analysis
 
-## Project Overview
+##  Project Overview
 
-This project explores Walmart sales transaction data using MySQL.
-The goal is to analyze product performance, sales trends, and customer behavior to uncover actionable business insights.
+This project analyzes Walmart transactional sales data using MySQL to uncover insights related to product performance, revenue trends, branch efficiency, and customer behavior.
 
-The dataset contains **1,000 transactions** across three branches located in:
+The dataset contains **1,000 transactions** across three branches:
 
 * Mandalay
 * Yangon
 * Naypyitaw
 
-The analysis focuses on:
-
-* Product performance
-* Revenue and profit trends
-* Customer segmentation
-* Branch performance
-* VAT and tax impact
+The objective is to apply SQL for real-world business analysis, transforming raw transactional data into actionable insights.
 
 ---
 
 #  Tech Stack
 
 * MySQL
-* SQL (Data Cleaning + Feature Engineering + Analysis)
+* SQL (Data Cleaning, Feature Engineering, Exploratory Analysis)
+* Git & GitHub
 
 ---
 
-#   Step 1: Data Cleaning & Loading
+#  Data Preparation
 
-* Created database `walmartsales`
-* Created structured `sales` table
-* Parsed date and time formats
-* Removed whitespace using `TRIM`
-* Cast numeric columns properly
-* Verified no NULL values
-* Confirmed 1000 rows inserted successfully
+### Database & Table Setup
+
+* Created database: `walmartsales`
+* Designed structured `sales` table with appropriate data types
+* Imported and validated 1,000 rows
+
+### Data Cleaning
+
+* Trimmed whitespace using `TRIM`
+* Cast numeric columns to proper decimal types
+* Parsed mixed date/time formats using `STR_TO_DATE`
+* Verified no NULL values in critical fields
 
 ---
 
-#   Step 2: Feature Engineering
+#  Feature Engineering
 
-Created new analytical columns:
+Added analytical fields to enable deeper insights:
 
 * `time_of_day` → Morning / Afternoon / Evening
-* `day_name` → Monday to Sunday
-* `month_name` → January / February / March
+* `day_name` → Extracted weekday from transaction date
+* `month_name` → Extracted month from transaction date
 
-These columns allow deeper business analysis.
-
----
-
-#   Step 3: Exploratory Data Analysis (EDA)
+These engineered fields allow temporal sales pattern analysis.
 
 ---
 
-##   Generic Insights
+#  Exploratory Data Analysis (EDA)
 
-### Unique Cities
+##  Branch & Location Insights
 
-3 cities exist in the dataset.
-
-### Branch Locations
-
-Each branch operates in a unique city.
-
----
-
-##   Product Analysis
-
-### Unique Product Lines
-
-6 product categories are present.
-
-### Most Selling Product Line (By Quantity)
-
-Food and Beverages recorded the highest quantity sold.
-
-### Product Line With Highest Revenue
-
-Food and Beverages generated the highest revenue overall.
-
-### Product Line With Highest VAT
-
-Food and Beverages also produced the highest VAT.
-
-### Good vs Bad Product Lines
-
-Product lines performing above overall average quantity were marked as "Good".
-
-### Average Rating by Product Line
-
-Some product lines received significantly higher customer ratings, showing stronger satisfaction levels.
+* 3 unique cities in dataset
+* Each branch operates in a distinct city
+* Naypyitaw generates the highest total revenue
+* Branch C is the top-performing branch
 
 ---
 
-##   Revenue & Sales Analysis
+##  Product Performance
 
-### Revenue by Month
-
-March generated the highest revenue.
-
-### Month With Largest COGS
-
-March recorded the highest cost of goods sold.
-
-### Revenue by Branch
-
-Branch C produced the highest revenue.
-
-### City With Highest Revenue
-
-Naypyitaw led total revenue.
-
-### Sales by Time of Day
-
-Afternoon showed the highest number of transactions.
+* 6 unique product lines
+* **Food & Beverages** is the highest-selling category (by quantity)
+* Food & Beverages also generates the highest revenue and VAT
+* Several product lines outperform overall average sales (classified as "Good")
+* Ratings are consistently strong across categories
 
 ---
 
-##   Customer Analysis
+##  Revenue Trends
 
-### Unique Customer Types
-
-Two customer segments:
-
-* Member
-* Normal
-
-### Customer Type Bringing Most Revenue
-
-Members contributed slightly higher total revenue.
-
-### Customer Type Buying Most Quantity
-
-Members purchased more units overall.
-
-### Gender Distribution
-
-Gender distribution was nearly balanced.
-
-### Highest Ratings by Time of Day
-
-Evening transactions showed slightly higher average ratings.
-
-### Best Rated Day
-
-Certain weekdays recorded stronger average ratings compared to others.
+* March is the highest revenue month
+* March also has the highest COGS
+* Afternoon is the busiest sales period
+* Revenue distribution varies slightly across branches
 
 ---
 
-##   VAT & Tax Insights
+##  Customer Insights
 
-### City With Highest VAT
-
-Naypyitaw recorded the highest total VAT.
-
-### Customer Type Paying Most VAT
-
-Members contributed the highest VAT overall.
+* 2 customer types: Member and Normal
+* Members generate slightly higher total revenue
+* Members purchase higher quantities overall
+* Gender distribution is nearly balanced
+* Evening transactions show marginally higher average ratings
 
 ---
 
-#   Business Insights Summary
+##  VAT & Tax Insights
 
-1. Food & Beverages is the strongest performing product category.
-2. March is peak revenue month.
-3. Branch C and Naypyitaw dominate overall sales.
-4. Members are more valuable customers (higher revenue + VAT).
-5. Afternoon is the busiest sales period.
-6. Customer satisfaction is generally high across product lines.
+* Naypyitaw records the highest VAT contribution
+* Members contribute the highest VAT amount
 
 ---
 
-#   Project Structure
+#  Business Insights Summary
+
+1. Food & Beverages drives overall profitability.
+2. March represents peak operational performance.
+3. Branch C and Naypyitaw lead in revenue contribution.
+4. Members are higher-value customers.
+5. Afternoon is the strongest sales window.
+6. Customer satisfaction remains consistently strong.
+
+---
+
+#  Project Structure
 
 ```
 walmart-sales-sql-analysis/
@@ -191,33 +126,30 @@ walmart-sales-sql-analysis/
 
 ---
 
-#   How To Run This Project
+#  How to Run
 
 1. Create database `walmartsales`
-2. Run `01_create_load.sql`
-3. Run `02_feature_engineering.sql`
-4. Run `03_analysis.sql`
-5. Screenshot results
-6. Upload screenshots inside `/screenshots` folder
+2. Execute `01_create_load.sql`
+3. Execute `02_feature_engineering.sql`
+4. Execute `03_analysis.sql`
 
 ---
 
-#   Conclusion
+#  Key Skills Demonstrated
 
-This project demonstrates:
-
-* SQL data cleaning
+* Relational database design
+* Data cleaning and transformation
 * Feature engineering
-* Business intelligence analysis
-* Aggregation, grouping, subqueries
-* Revenue and customer segmentation analysis
-
-It reflects practical real-world business analytics using structured SQL.
+* Aggregation and grouping
+* Subqueries and conditional logic
+* Business performance analysis
 
 ---
 
 #  Author
 
-Junaid Ullah
+**Junaid Ullah**
 MS Business Analytics
 SQL | Data Analytics | Business Intelligence
+
+
