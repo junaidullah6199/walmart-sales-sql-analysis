@@ -25,7 +25,6 @@ The analysis focuses on:
 
 * MySQL
 * SQL (Data Cleaning + Feature Engineering + Analysis)
-* GitHub (Version Control)
 
 ---
 
