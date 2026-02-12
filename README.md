@@ -1,2 +1,2 @@
 walmart-sales-sql-analysis
-Walmart sales data analysis using MySQL including EDA, feature engineering, and business insights.
+Walmart Sales Data Analysis using MySQL with data cleaning, feature engineering, and business insights.
